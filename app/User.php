@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * The user that belong to the materials.
+     */
+    public function materials()
+    {
+        return $this->belongsToMany('App\Material', 'user_loans_material')->withPivot(['notes', 'delivered_at']);
+    }
 }

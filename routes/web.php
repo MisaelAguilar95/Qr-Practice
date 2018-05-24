@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/users/{id}', 'UsersController@find');
+Route::get('/users/{user}/materials/{material}', 'UsersController@attach');
