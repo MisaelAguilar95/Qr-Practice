@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    You are logged in! Check out the <a href="{{ route('materials.index') }}">materials!</a>
                 </div>
             </div>
         </div>

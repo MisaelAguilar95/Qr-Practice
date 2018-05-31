@@ -19,8 +19,8 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::get('/qr', function () {//User::find()->idate(format)
+Route::get('/qr', function () {
 	return \QRCode::text(\App\User::first())->svg();
 });
 
-Route::resource('/materials', 'MaterialsController');
+Route::resource('/materials', 'MaterialsController')->middleware('auth');
