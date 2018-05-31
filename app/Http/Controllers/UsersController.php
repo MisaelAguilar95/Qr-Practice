@@ -14,6 +14,18 @@ class UsersController extends Controller
     	return \App\User::findOrFail($id);
     }
 
+    public function all(Request $request)
+    {
+        return \App\User::all();
+    }
+
+
+    /**
+     * Attach a material to a user 
+     *
+     * @param  \App\User\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
+     */
     public function attach($user, $material)
     {
     	$userModel = \App\User::findOrFail($user);
