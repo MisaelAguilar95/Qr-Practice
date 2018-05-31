@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/me', function (Request $request) {
     return $request->user();
 });
+
+ // Route::get('/users', function (Request $request) {
+ // 	return 'dwq';
+ // });
+Route::get('/users', 'UsersController@all');
+// Route::get('/users/{id}', 'UsersController@find');
+Route::post('/users/{user}/materials/{material}', 'UsersController@attach');
+Route::resource('/materials', 'MaterialsController');
