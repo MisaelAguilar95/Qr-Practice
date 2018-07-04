@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use \YaroslavMolchan\Rbac\Traits\Rbac;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Rbac;
 
     /**
      * The attributes that are mass assignable.
