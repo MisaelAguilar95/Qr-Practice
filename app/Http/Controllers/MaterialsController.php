@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\MaterialStoreRequest;
 
 class MaterialsController extends Controller
 {
@@ -33,10 +34,17 @@ class MaterialsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MaterialStoreRequest $request)
     {
-        //
-        return "estoy en el metodo store en materialsController";
+        $material = \App\Material::create($request->all());
+        // $material = \App\Material::create([
+        //     'name' => 'dsadada.dsad.a',
+        //     'description' => 'dwqdwqwdq',
+        //     'qr_code' => 'fwefwqfwqfwqfwq'
+        // ]);
+        return $material;
+
+        //return "estoy en el metodo store en materialsController";
     }
 
     /**

@@ -30,3 +30,4 @@ Route::get('/materials', 'MaterialsController@index');
 Route::get('/materials/{id}', 'MaterialsController@show');
 Route::delete('/materials/{id}', 'MaterialsController@eliminar');
 Route::patch('/materials/{id}', 'MaterialsController@update');
+Route::post('/materials', 'MaterialsController@store');

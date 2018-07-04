@@ -19,9 +19,8 @@ class Material extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'name', 'qr_code', 'description'
     ];
-
     /**
      * The materials that belong to the user.
      */
