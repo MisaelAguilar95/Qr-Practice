@@ -14,6 +14,15 @@ class Material extends Model
      */
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+    ];
+
+    /**
      * The materials that belong to the user.
      */
     public function users()

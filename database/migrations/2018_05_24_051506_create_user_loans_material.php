@@ -15,9 +15,9 @@ class CreateUserLoansMaterial extends Migration
     {
         Schema::create('user_loans_material', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('material_id')->unsigned();
-            $table->foreign('material_id')->references('id')->on('materials');
+            $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade');
             $table->text('notes');
             $table->dateTime('delivered_at')->nullable();
             $table->timestamps();

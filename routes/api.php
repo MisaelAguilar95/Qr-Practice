@@ -23,4 +23,10 @@ Route::middleware('auth:api')->get('/me', function (Request $request) {
 Route::get('/users', 'UsersController@all');
 // Route::get('/users/{id}', 'UsersController@find');
 Route::post('/users/{user}/materials/{material}', 'UsersController@attach');
-Route::resource('/materials', 'MaterialsController');
+// Route::resource('/materials', 'MaterialsController');
+
+
+Route::get('/materials', 'MaterialsController@index');
+Route::get('/materials/{id}', 'MaterialsController@show');
+Route::delete('/materials/{id}', 'MaterialsController@eliminar');
+Route::patch('/materials/{id}', 'MaterialsController@update');

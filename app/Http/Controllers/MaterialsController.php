@@ -13,7 +13,8 @@ class MaterialsController extends Controller
      */
     public function index()
     {
-        return view('materials.index');
+        return \App\Material::all();
+        // return view('materials.index');
     }
 
     /**
@@ -35,6 +36,7 @@ class MaterialsController extends Controller
     public function store(Request $request)
     {
         //
+        return "estoy en el metodo store en materialsController";
     }
 
     /**
@@ -45,7 +47,8 @@ class MaterialsController extends Controller
      */
     public function show($id)
     {
-        //
+        // return "estoy en el show" . $id;
+        return \App\Material::findOrFail($id);
     }
 
     /**
@@ -68,7 +71,13 @@ class MaterialsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //return $request->all();
+        $materialToUpdate = \App\Material::findOrFail($id);
+        // $materialToUpdate->name = $request->name;
+        // $materialToUpdate->save();
+        $materialToUpdate->update($request->all());
+        return $materialToUpdate;
+        //$materialToUpdate->update([])
     }
 
     /**
@@ -77,8 +86,10 @@ class MaterialsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function eliminar($id)
     {
-        //
+        $materialToDelete = \App\Material::findOrFail($id);
+        $materialToDelete->delete();
+        return $materialToDelete;
     }
 }

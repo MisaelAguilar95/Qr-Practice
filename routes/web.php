@@ -23,4 +23,4 @@ Route::get('/qr', function () {
 	return \QRCode::text(\App\User::first())->svg();
 });
 
-Route::resource('/materials', 'MaterialsController')->middleware('auth');
+//Route::resource('/materials', 'MaterialsController')->middleware('auth');
